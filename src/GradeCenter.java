@@ -12,6 +12,8 @@ public class GradeCenter
         int numberint = 1; // this will be the number that display on the screen for the course
         String number = "";
 
+        //here is an edit
+        
         // actiavtes the scanner for the user to input their response
         Scanner keyboard = new Scanner(System.in);
 
