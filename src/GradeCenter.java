@@ -61,28 +61,84 @@ public class GradeCenter
                 number = "th";
             }
 
+            System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+            grade[x] = keyboard.nextInt();
+
+
+            while (grade[x] < 0 && grade[x] > 100) {
+                System.out.printf("The grade must be in the range of 0-100 %n");
                 System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
                 grade[x] = keyboard.nextInt();
-
-
-                    while (grade[x] < 0 && grade[x] > 100) {
-                        System.out.printf("The grade must be in the range of 0-100 %n");
-                        System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
-                        grade[x] = keyboard.nextInt();
-                    }
+            }
 
             // it adds 1 to n for the next course
             n = n + 1;
         }
 
-        // matching the percentage with the letter grades
-
-        
+        // displaying the grade for each courses and averaging the all courses
         for (int x=0; x <6; x++)
         {
-            System.out.printf(String.valueOf(grade[x]) +"%n");
+            System.out.printf("The mark for the %d%s course is %d% which is %s%n",numberint,number,grade[x],convertingtoGrade(grade[x]));
         }
 
+        System.out.printf("The average mark is %d% which is %s",averageGrade(grade[x],convertingtoGrade(averageGrade(grade[x]))));
+
+
+    }
+
+    // matching the percentage to letter grade
+    public static String convertingtoGrade (int grade)
+    {
+        if (grade <= 49)
+        {
+            return "an E";
+        }
+
+        else if (grade <= 54)
+        {
+            return "a D";
+        }
+
+        else if (grade <= 59)
+        {
+            return "a D+";
+        }
+
+        else if (grade <= 64)
+        {
+            return "a C";
+        }
+
+        else if (grade <= 69)
+        {
+            return "a C+";
+        }
+
+        else if (grade <= 74)
+        {
+            return "a B";
+        }
+
+        else if (grade <= 79)
+        {
+            return "a B+";
+        }
+
+        else if (grade <= 89)
+        {
+            return "an A";
+        }
+
+        // for grade 90% and over
+        else
+        {
+            return "an A+";
+        }
+    }
+
+    public static double averageGrade(int grade1, int grade2, int grade3, int grade4,int grade5, int grade6)
+    {
+        return (double) (grade1+grade2+grade3+grade4+grade5+grade6)/6;
     }
 
 }
