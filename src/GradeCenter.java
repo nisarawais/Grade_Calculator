@@ -8,12 +8,17 @@ public class GradeCenter
     public static void main(String[] args)
 
     {
-        int n = 1; // declaring the value for n
+        int tracker = 1; // declaring the value for tracker. it helps to identify which number is at
         int numberint = 1; // this will be the number that display on the screen for the course
         String number = "";
-        int grade[] = new int [6];
+        int grade1 = 0;
+        int grade2 = 0;
+        int grade3= 0;
+        int grade4= 0;
+        int grade5 = 0;
+        int grade6= 0;
+        int temporarygrade; // temporarily stores the value for grade
 
-        //here is an edit
 
         // activates the scanner for the user to input their response
         Scanner keyboard = new Scanner(System.in);
@@ -25,63 +30,132 @@ public class GradeCenter
         {
 
 
-            if(n == 1)
+            if(tracker == 1)
             {
-                numberint = n;
+                numberint = tracker;
                 number = "st";
+
+                System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                temporarygrade = keyboard.nextInt();
+
+
+                while (temporarygrade < 0 && temporarygrade > 100) {
+                    System.out.printf("The grade must be in the range of 0-100 %n");
+                    System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                    temporarygrade = keyboard.nextInt();
+                }
+
+                grade1 = temporarygrade;
+
             }
 
-            else if (n == 2)
+            else if (tracker == 2)
             {
-                numberint = n;
+                numberint = tracker;
                 number = "nd";
+
+                System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                temporarygrade = keyboard.nextInt();
+
+
+                while (temporarygrade < 0 && temporarygrade > 100) {
+                    System.out.printf("The grade must be in the range of 0-100 %n");
+                    System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                    temporarygrade = keyboard.nextInt();
+                }
+
+                grade2 = temporarygrade;
             }
 
-            else if (n == 3)
+            else if (tracker == 3)
             {
-                numberint = n;
+                numberint = tracker;
                 number = "rd";
+
+                System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                temporarygrade = keyboard.nextInt();
+
+
+                while (temporarygrade < 0 && temporarygrade > 100) {
+                    System.out.printf("The grade must be in the range of 0-100 %n");
+                    System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                    temporarygrade = keyboard.nextInt();
+                }
+
+                grade3 = temporarygrade;
             }
 
-            else if (n == 4)
+            else if (tracker == 4)
             {
-                numberint = n;
+                numberint = tracker;
                 number = "th";
+
+                System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                temporarygrade = keyboard.nextInt();
+
+
+                while (temporarygrade < 0 && temporarygrade > 100) {
+                    System.out.printf("The grade must be in the range of 0-100 %n");
+                    System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                    temporarygrade = keyboard.nextInt();
+                }
+                grade4 = temporarygrade;
             }
 
-            else if (n == 5)
+            else if (tracker == 5)
             {
-                numberint = n;
+                numberint = tracker;
                 number = "th";
+
+                System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                temporarygrade = keyboard.nextInt();
+
+
+                while (temporarygrade < 0 && temporarygrade > 100) {
+                    System.out.printf("The grade must be in the range of 0-100 %n");
+                    System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                    temporarygrade = keyboard.nextInt();
+                }
+
+                grade5 = temporarygrade;
             }
 
             else
             {
-                numberint = n;
+                numberint = tracker;
                 number = "th";
-            }
 
-            System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
-            grade[x] = keyboard.nextInt();
-
-
-            while (grade[x] < 0 && grade[x] > 100) {
-                System.out.printf("The grade must be in the range of 0-100 %n");
                 System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
-                grade[x] = keyboard.nextInt();
+                temporarygrade = keyboard.nextInt();
+
+
+                while (temporarygrade < 0 && temporarygrade > 100) {
+                    System.out.printf("The grade must be in the range of 0-100 %n");
+                    System.out.printf("Please enter your grade for %d%s course:  ", numberint, number);
+                    temporarygrade = keyboard.nextInt();
+                }
+
+                grade6 = temporarygrade;
             }
 
-            // it adds 1 to n for the next course
-            n = n + 1;
+
+
+            // it adds 1 to tracker for the next course
+            tracker = tracker + 1;
+
         }
 
         // displaying the grade for each courses and averaging the all courses
-        for (int x=0; x <6; x++)
-        {
-            System.out.printf("The mark for the %d%s course is %d% which is %s%n",numberint,number,grade[x],convertingtoGrade(grade[x]));
-        }
 
-        System.out.printf("The average mark is %d% which is %s",averageGrade(grade[x],convertingtoGrade(averageGrade(grade[x]))));
+
+        System.out.printf("The mark for the %d%s course is %d% which is %s%n",numberint,number,grade1,convertingtoGrade(grade1));
+        System.out.printf("The mark for the %d%s course is %d% which is %s%n",numberint,number,grade2,convertingtoGrade(grade2));
+        System.out.printf("The mark for the %d%s course is %d% which is %s%n",numberint,number,grade3,convertingtoGrade(grade3));
+        System.out.printf("The mark for the %d%s course is %d% which is %s%n",numberint,number,grade4,convertingtoGrade(grade4));
+        System.out.printf("The mark for the %d%s course is %d% which is %s%n",numberint,number,grade5,convertingtoGrade(grade5));
+        System.out.printf("The mark for the %d%s course is %d% which is %s%n",numberint,number,grade6,convertingtoGrade(grade6));
+
+        System.out.printf("The average mark is %d% which is %s",averageGrade(grade1,grade2,grade3,grade4,grade5,grade6),convertingtoGrade((int) averageGrade(grade1,grade2,grade3,grade4,grade5,grade6)));
 
 
     }
