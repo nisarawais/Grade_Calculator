@@ -176,7 +176,7 @@ public class GradeCenter
             return "an A";
         }
 
-        // for grade 90% and over
+        // for grade that is over 89%
         else
         {
             return "an A+";
